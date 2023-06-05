@@ -1,0 +1,16 @@
+.search,
+.results {
+  width: 100%;
+}
+.results {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+.results li {
+  padding: 2px 0;
+}
+.results li:hover {
+    cursor: pointer;
+}

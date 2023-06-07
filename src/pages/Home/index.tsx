@@ -41,7 +41,7 @@ const Home = () => {
       <div className="container">
         <h1>Weather App</h1>
         <Search onLocationClick={handleCitySearch} />
-        <WeatherWidget weatherData={weatherData} loading={loading} configId="weatherWidgetContainer"/>
+        <WeatherWidget weatherData={weatherData} loading={loading} configId="weather-widget"/>
       </div>
     </div>
   );

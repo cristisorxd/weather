@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { WeatherData } from "../../hooks/useWeatherData";
 import "./style.css";
 import {
   convertKelvinToCelsius,
   convertKelvinToFahrenheit,
 } from "../../utils/helpers";
+import { createPortal } from "react-dom";
 
 interface IWidget {
   weatherData: WeatherData | null;
@@ -18,6 +19,22 @@ const WeatherWidget: React.FC<IWidget> = ({
   configId,
 }) => {
   const [isCelsius, setIsCelsius] = useState(true);
+
+  useEffect(() => {
+    let container = document.getElementById(configId);
+
+    if (!container) {
+      container = document.createElement('div');
+      container.id = configId;
+      document.body.appendChild(container);
+    }
+
+    return () => {
+      if (container && container.parentNode === document.body) {
+        document.body.removeChild(container);
+      }
+    };
+  }, [configId]);
 
   const toggleTemperatureUnit = () => {
     setIsCelsius((prevIsCelsius) => !prevIsCelsius);
@@ -36,8 +53,10 @@ const WeatherWidget: React.FC<IWidget> = ({
   const temperature = isCelsius
     ? Math.round(convertKelvinToCelsius(main?.temp || 0))
     : Math.round(convertKelvinToFahrenheit(main?.temp || 0));
-  return (
-    <div id={configId}>
+
+  const portalDiv = document.getElementById(configId)!;
+
+  return createPortal(
       <div className="widget">
         <div className="info-top">
           <span>
@@ -83,8 +102,8 @@ const WeatherWidget: React.FC<IWidget> = ({
             </span>
           </div>
         </div>
-      </div>
-    </div>
+      </div>,
+    portalDiv
   );
 };
 

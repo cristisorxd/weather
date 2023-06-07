@@ -30,7 +30,6 @@ export const useWeatherData = (lat: number, lon: number): [WeatherData | null, b
         const data = await response.json();
         setWeatherData(data);
         setLoading(false);
-        console.log(data);
       } catch (error) {
         console.log("Error fetching weather data:", error);
         setLoading(false);

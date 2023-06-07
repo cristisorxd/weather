@@ -20,7 +20,6 @@ const useCitySearch = () => {
       );
       const result = await response.json();
       setCityOptions(result.data);
-      console.log(result.data);
     } catch (error) {
       console.error(error);
     }

@@ -2,10 +2,10 @@
 ![Screenshot 2023-06-25 220253](https://github.com/cristisorxd/weather/assets/86917574/ed1b86ba-6d45-499b-8514-c6729cf7da47)
 
 
-A real-time weather app using Typescript, React, RapidAPI, and OpenWeather.
--Autosuggest
--Geolocator
--Portals
+A real-time weather app using Typescript, React, RapidAPI, and OpenWeather.\
+-Autosuggest\
+-Geolocator\
+-Portals\
 -Custom hooks
 
 # Getting Started with Create React App

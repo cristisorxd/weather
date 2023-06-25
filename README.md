@@ -1,3 +1,6 @@
+# Image
+![Screenshot 2023-06-25 220253](https://github.com/cristisorxd/weather/assets/86917574/ed1b86ba-6d45-499b-8514-c6729cf7da47)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
